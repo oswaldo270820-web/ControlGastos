@@ -1,101 +1,203 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Gestor Financiero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestor Financiero</title>
+
     <link rel="stylesheet" href="dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-    <div class="header-contenido">
-        <h1>Gestor Financiero</h1>
-        <div class="usuario">
-            <a href="index.html" class="btn-cerrar">Cerrar sesión</a>
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>GESTORF</h2>
+            </div>
+
+            <nav class="menu">
+
+                <a href="#" onclick="mostrarSeccion('inicio')">
+                    Inicio
+                </a>
+
+                <a href="#" onclick="mostrarSeccion('movimientos')">
+                    Movimientos
+                </a>
+
+                <a href="#" onclick="mostrarSeccion('metas')">
+                    Metas
+                </a>
+
+                <a href="index.html">
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- MAIN -->
+
+        <div class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+                    <h1>Dashboard Financiero</h1>
+                    <p>Controla tus finanzas personales</p>
+                </div>
+
+            </header>
+
+            <!-- CONTENT -->
+
+            <main class="content">
+
+                <!-- INICIO -->
+
+                <section id="inicio" class="section">
+
+                    <div class="cards">
+
+                        <div class="card">
+                            <h3>Saldo Actual</h3>
+                            <p id="saldo">$0</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Total Ingresos</h3>
+                            <p id="totalIngresos">$0</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Total Gastos</h3>
+                            <p id="totalGastos">$0</p>
+                        </div>
+
+                    </div>
+
+                    <div class="forms-container">
+
+                        <!-- INGRESOS -->
+
+                        <div class="form-box">
+
+                            <h2>Registrar Ingreso</h2>
+
+                            <form id="formIngreso">
+
+                                <input type="date" id="fechaIngreso" required>
+
+                                <input type="number" id="montoIngreso" placeholder="Monto" required>
+
+                                <input type="text" id="conceptoIngreso" placeholder="Concepto" required>
+
+                                <button type="submit">
+                                    Guardar Ingreso
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                        <!-- GASTOS -->
+
+                        <div class="form-box">
+
+                            <h2>Registrar Gasto</h2>
+
+                            <form id="formGasto">
+
+                                <input type="date" id="fechaGasto" required>
+
+                                <input type="number" id="montoGasto" placeholder="Monto" required>
+
+                                <input type="text" id="conceptoGasto" placeholder="Concepto" required>
+
+                                <button type="submit">
+                                    Guardar Gasto
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- MOVIMIENTOS -->
+
+                <section id="movimientos" class="section hidden">
+
+                    <div class="table-container">
+
+                        <h2>Movimientos</h2>
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Descripción</th>
+                                    <th>Monto</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tablaMovimientos"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <!-- METAS -->
+
+                <section id="metas" class="section hidden">
+
+                    <div class="form-box">
+
+                        <h2>Registrar Meta</h2>
+
+                        <form id="formMeta">
+
+                            <input type="text" id="nombreMeta" placeholder="Nombre de la meta" required>
+
+                            <input type="number" id="montoMeta" placeholder="Monto objetivo" required>
+
+                            <button type="submit">
+                                Guardar Meta
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <div id="listaMetas" class="metas-grid"></div>
+
+                </section>
+
+            </main>
+
         </div>
+
     </div>
-</header>
 
-<nav>
-    <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
-    <a href="#" onclick="mostrarSeccion('movimientos')">Movimientos</a>
-    <a href="#" onclick="mostrarSeccion('metas')">Metas</a>
-</nav>
+    <script src="dashboard.js"></script>
 
-<main>
-
-<section id="inicio">
-    <h2>Resumen</h2>
-
-    <div class="tarjetas">
-        <div class="card">
-            <h3>Saldo Actual</h3>
-            <p id="saldo">$0</p>
-        </div>
-
-        <div class="card">
-            <h3>Total Ingresos</h3>
-            <p id="totalIngresos">$0</p>
-        </div>
-
-        <div class="card">
-            <h3>Total Gastos</h3>
-            <p id="totalGastos">$0</p>
-        </div>
-    </div>
-
-    <hr>
-
-    <h2>Registrar Ingreso</h2>
-    <form id="formIngreso">
-        <input type="date" id="fechaIngreso" required>
-        <input type="number" id="montoIngreso" required>
-        <input type="text" id="conceptoIngreso" required>
-        <button type="submit">Guardar Ingreso</button>
-    </form>
-
-    <h2>Registrar Gasto</h2>
-    <form id="formGasto">
-        <input type="date" id="fechaGasto" required>
-        <input type="number" id="montoGasto" required>
-        <input type="text" id="conceptoGasto" required>
-        <button type="submit">Guardar Gasto</button>
-    </form>
-</section>
-
-<section id="movimientos" style="display:none;">
-    <h2>Lista de Movimientos</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Fecha</th>
-                <th>Descripción</th>
-                <th>Monto</th>
-                <th>Tipo</th>
-            </tr>
-        </thead>
-        <tbody id="tablaMovimientos"></tbody>
-    </table>
-</section>
-
-<section id="metas" style="display:none;">
-    <h2>Registrar Meta</h2>
-    <form id="formMeta">
-        <input type="text" id="nombreMeta" required>
-        <input type="number" id="montoMeta" required>
-        <button type="submit">Guardar Meta</button>
-    </form>
-
-    <div id="listaMetas"></div>
-</section>
-
-</main>
-
-<footer>
-    <p>Proyecto TI - Gestor Financiero Personal</p>
-</footer>
-
-<script src="dashboard.js"></script>
 </body>
+
 </html>
