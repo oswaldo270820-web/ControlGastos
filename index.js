@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
-       MODAL
-    ========================== */
-
     const modal = document.getElementById("modal-info");
 
     const btnConocerMas =
