@@ -44,10 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    /* =========================
-       BOTONES LOGIN
-    ========================== */
-
     const botonesComenzar =
         document.querySelectorAll(".btn-principal");
 
@@ -73,10 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "login.html";
 
     });
-
-    /* =========================
-       SOPORTE
-    ========================== */
 
     const abrirSoporte =
         document.getElementById("abrir-soporte");
