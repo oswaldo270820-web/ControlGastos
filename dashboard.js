@@ -492,3 +492,16 @@ document
     "login.html";
 
 });
+/* SIDEBAR TOGGLE */
+
+const toggleSidebar =
+document.getElementById("toggleSidebar");
+
+const sidebar =
+document.querySelector(".sidebar");
+
+toggleSidebar.addEventListener("click", function(){
+
+    sidebar.classList.toggle("closed");
+
+});

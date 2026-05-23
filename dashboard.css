@@ -12,9 +12,7 @@ body{
 
 }
 
-/* ========================= */
 /* DASHBOARD */
-/* ========================= */
 
 .dashboard-container{
 
@@ -24,9 +22,7 @@ body{
 
 }
 
-/* ========================= */
 /* SIDEBAR */
-/* ========================= */
 
 .sidebar{
 
@@ -47,28 +43,37 @@ body{
 
     justify-content:space-between;
 
-    box-shadow:
-    5px 0 20px rgba(0,0,0,0.08);
+    transition:0.35s ease;
+
+    overflow:hidden;
 
 }
+
+/* SIDEBAR CERRADA */
+
+.sidebar.closed{
+
+    width:0;
+
+    padding:0;
+
+    opacity:0;
+
+}
+
+/* LOGO */
 
 .logo{
 
     color:white;
 
-    font-weight:700;
-
-    font-size:2rem;
+    font-weight:bold;
 
     margin-bottom:40px;
 
-    letter-spacing:1px;
-
 }
 
-/* ========================= */
 /* MENU */
-/* ========================= */
 
 .menu{
 
@@ -82,7 +87,7 @@ body{
 
 .menu-link{
 
-    color:#cbd5e1;
+    color:#dbeafe;
 
     text-decoration:none;
 
@@ -100,23 +105,13 @@ body{
 
     font-weight:500;
 
-    font-size:1rem;
-
-}
-
-.menu-link i{
-
-    font-size:1.1rem;
-
 }
 
 .menu-link:hover{
 
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.12);
 
     color:white;
-
-    transform:translateX(3px);
 
 }
 
@@ -126,45 +121,21 @@ body{
 
     color:#0f172a;
 
-    font-weight:600;
-
 }
 
-/* ========================= */
-/* FOOTER SIDEBAR */
-/* ========================= */
-
-.sidebar-footer{
-
-    margin-top:30px;
-
-}
-
-.sidebar-footer .btn{
-
-    border-radius:14px;
-
-    padding:12px;
-
-    font-weight:600;
-
-}
-
-/* ========================= */
 /* MAIN */
-/* ========================= */
 
 .main-content{
 
     flex:1;
 
-    overflow-y:auto;
+    width:100%;
+
+    transition:0.35s ease;
 
 }
 
-/* ========================= */
 /* TOPBAR */
-/* ========================= */
 
 .topbar{
 
@@ -180,8 +151,17 @@ body{
 
     border-bottom:1px solid #e5e7eb;
 
-    box-shadow:
-    0 2px 10px rgba(0,0,0,0.03);
+}
+
+/* TOPBAR LEFT */
+
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
 
 }
 
@@ -191,17 +171,53 @@ body{
 
     color:#0f172a;
 
-    font-weight:700;
-
 }
 
 .topbar p{
 
     margin:0;
 
-    color:#64748b;
+    color:#777;
 
 }
+
+/* BOTON SIDEBAR */
+
+.toggle-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0f172a;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.toggle-btn:hover{
+
+    background:#1e293b;
+
+}
+
+/* FECHA */
 
 .fecha{
 
@@ -219,29 +235,15 @@ body{
 
     gap:10px;
 
-    font-weight:500;
-
 }
 
-/* ========================= */
-/* CONTENIDO */
-/* ========================= */
-
-.contenido{
-
-    padding:30px;
-
-}
-
-/* ========================= */
-/* CARDS RESUMEN */
-/* ========================= */
+/* CARDS */
 
 .resumen-card{
 
-    border-radius:24px;
+    border-radius:22px;
 
-    padding:30px;
+    padding:28px;
 
     color:white;
 
@@ -252,23 +254,13 @@ body{
     align-items:center;
 
     box-shadow:
-    0 12px 30px rgba(0,0,0,0.08);
-
-    transition:0.3s;
-
-}
-
-.resumen-card:hover{
-
-    transform:translateY(-4px);
+    0 10px 30px rgba(0,0,0,0.08);
 
 }
 
 .resumen-card p{
 
     margin-bottom:10px;
-
-    opacity:0.9;
 
 }
 
@@ -278,15 +270,11 @@ body{
 
     font-size:2rem;
 
-    font-weight:700;
-
 }
 
 .resumen-card i{
 
-    font-size:48px;
-
-    opacity:0.9;
+    font-size:45px;
 
 }
 
@@ -329,28 +317,18 @@ body{
 
 }
 
-/* ========================= */
 /* CUSTOM CARD */
-/* ========================= */
 
 .custom-card{
 
     background:white;
 
-    border-radius:22px;
+    border-radius:20px;
 
     padding:28px;
 
     box-shadow:
-    0 8px 25px rgba(0,0,0,0.05);
-
-    transition:0.3s;
-
-}
-
-.custom-card:hover{
-
-    transform:translateY(-2px);
+    0 8px 25px rgba(0,0,0,0.06);
 
 }
 
@@ -359,37 +337,17 @@ body{
 
     color:#0f172a;
 
-    margin-bottom:20px;
-
-    font-weight:700;
-
 }
 
-/* ========================= */
-/* FORMULARIOS */
-/* ========================= */
-
-label{
-
-    margin-bottom:8px;
-
-    font-weight:600;
-
-    color:#334155;
-
-}
+/* FORM */
 
 .form-control{
 
-    border-radius:14px;
+    border-radius:12px;
 
-    padding:12px 14px;
+    padding:12px;
 
     border:1px solid #dbe2ea;
-
-    transition:0.3s;
-
-    background:#f8fafc;
 
 }
 
@@ -400,79 +358,13 @@ label{
     box-shadow:
     0 0 0 0.2rem rgba(29,78,216,0.12);
 
-    background:white;
-
 }
 
-/* ========================= */
-/* BOTONES */
-/* ========================= */
-
-.btn{
-
-    border-radius:14px !important;
-
-    padding:12px;
-
-    font-weight:600;
-
-}
-
-.btn-primary{
-
-    background:#1d4ed8;
-
-    border:none;
-
-}
-
-.btn-primary:hover{
-
-    background:#1e40af;
-
-}
-
-.btn-success{
-
-    background:#16a34a;
-
-    border:none;
-
-}
-
-.btn-success:hover{
-
-    background:#15803d;
-
-}
-
-.btn-danger{
-
-    background:#dc2626;
-
-    border:none;
-
-}
-
-.btn-danger:hover{
-
-    background:#b91c1c;
-
-}
-
-/* ========================= */
 /* TABLAS */
-/* ========================= */
-
-.table{
-
-    margin-bottom:0;
-
-}
 
 .table thead{
 
-    background:#eff6ff;
+    background:#eef4ff;
 
 }
 
@@ -482,64 +374,28 @@ label{
 
     border:none;
 
-    font-weight:700;
-
-    padding:16px;
-
-}
-
-.table tbody td{
-
-    padding:16px;
-
-    vertical-align:middle;
-
-}
-
-.table tbody tr{
-
-    transition:0.2s;
-
 }
 
 .table tbody tr:hover{
 
-    background:#f8fafc;
+    background:#f5f9ff;
 
 }
 
-/* ========================= */
-/* BADGES */
-/* ========================= */
-
-.badge{
-
-    padding:8px 12px;
-
-    border-radius:10px;
-
-    font-size:0.8rem;
-
-}
-
-/* ========================= */
 /* METAS */
-/* ========================= */
 
 .meta-card{
 
     background:white;
 
-    border-radius:22px;
+    border-radius:18px;
 
-    padding:25px;
+    padding:24px;
 
     box-shadow:
-    0 8px 20px rgba(0,0,0,0.05);
+    0 8px 20px rgba(0,0,0,0.06);
 
     transition:0.3s;
-
-    border:1px solid #eef2f7;
 
 }
 
@@ -553,75 +409,13 @@ label{
 
     color:#0f172a;
 
-    margin-bottom:12px;
-
-    font-weight:700;
+    margin-bottom:10px;
 
 }
 
-.meta-card p{
-
-    color:#64748b;
-
-    margin-bottom:18px;
-
-}
-
-/* ========================= */
-/* SCROLL */
-/* ========================= */
-
-::-webkit-scrollbar{
-
-    width:8px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#cbd5e1;
-
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#94a3b8;
-
-}
-
-/* ========================= */
 /* RESPONSIVE */
-/* ========================= */
 
 @media(max-width:992px){
-
-    .sidebar{
-
-        width:90px;
-
-        padding:25px 10px;
-
-    }
-
-    .logo{
-
-        display:none;
-
-    }
-
-    .menu-link span{
-
-        display:none;
-
-    }
-
-    .menu-link{
-
-        justify-content:center;
-
-    }
 
     .topbar{
 
@@ -634,70 +428,5 @@ label{
         align-items:flex-start;
 
     }
-
-}
-
-@media(max-width:768px){
-
-    .contenido{
-
-        padding:20px;
-
-    }
-
-    .resumen-card{
-
-        padding:24px;
-
-    }
-
-    .custom-card{
-
-        padding:22px;
-
-    }
-
-}
-/* ================================= */
-/* FIX BOOTSTRAP */
-/* ================================= */
-
-body{
-
-    background:#f4f7fb !important;
-
-}
-
-.main-content{
-
-    background:#f4f7fb !important;
-
-}
-
-.custom-card{
-
-    background:white !important;
-
-}
-
-.resumen-card{
-
-    color:white !important;
-
-}
-
-.table{
-
-    background:white !important;
-
-}
-
-.sidebar{
-
-    min-height:100vh;
-
-    position:sticky;
-
-    top:0;
 
 }
